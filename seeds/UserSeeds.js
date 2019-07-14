@@ -1,6 +1,11 @@
-const user = {
-  username: 'travel_agency_1',
-  password: 'Password1234',
-};
+/**
+ * @return {object}
+ */
+function returnUser() {
+  return {
+    username: 'username',
+    password: 'password',
+  };
+}
 
-module.export = user;
+module.export = returnUser;

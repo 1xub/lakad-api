@@ -6,11 +6,10 @@ const HttpSuccess = require('api/responses/HttpSuccess');
 const HttpError = require('api/responses/HttpError');
 const app = express();
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/api/lakad', require('api/routers/EstablismentsRouter'));
 app.use('/api/lakad', require('api/routers/AuthRouter'));
+app.use('/api/lakad', require('api/routers/EstablismentsRouter'));
 // Success middleware
 app.use((req, res, next) => {
   if (res.locals.respObj && res.locals.respObj instanceof HttpSuccess) {
